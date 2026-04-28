@@ -1,0 +1,23 @@
+/* Gesamtes Dokument: Verdana */
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Header: HTW-Grau + Flexbox */
+header{
+    background-color: #AFAFAF;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Icon links – Größe nach Bedarf anpassen */
+header img{
+    
+}
+
+.wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
