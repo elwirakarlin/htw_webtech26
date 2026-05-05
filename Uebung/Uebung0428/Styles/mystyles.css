@@ -1,23 +1,149 @@
 /* Gesamtes Dokument: Verdana */
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-/* Header: HTW-Grau + Flexbox */
-header{
-    background-color: #AFAFAF;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+:root{
+    --htw--grau: #AFAFAF;
+    --htw--blau: cornflowerblue; 
 }
 
-/* Icon links – Größe nach Bedarf anpassen */
-header img{
+
+/* Header: HTW-Grau + Grid */
+header 
+{
+    background-color: var(--htw--grau);
+    color: white;
+    /*display: grid;
+    grid-template-columns: auto 15%;*/
+    display: flex; 
+    justify-content: space-between;
+    /*margin: 1px;*/
+    /*align-items: center;*/
+
+    /* Icon links – Größe nach Bedarf anpassen */
+    img{
+
+    width:60px;
+    padding: 1%;
+    border: 1px solid white;
+
+    span {
+        /*text-align: right;*/
+        padding: 1%;
+    }
+}
     
 }
 
-.wrapper{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        
+
+/*header text{
+    padding-left: 10px;
+}*/
+
+h1{
+    color:var(--htw--blau);
+}
+
+h3{
+    margin-left: 8%; 
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ol{
+    list-style: none;
+}
+ol>li{
+    border: 2px solid black;
+    margin: 1%;
+    padding: 1%;
+    width: 75%;
+    border-radius: 7px;
+
+}
+
+ol>li:hover{
+    background-color: azure;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+
+a{
+    color:black;
+    text-decoration: none;
+}
+
+a:hover{
+font-weight: bold;
+}
+
+#indexmain
+{
+    background-color:aliceblue;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+#indexmain>aside{
+    background-color: aquamarine;
+    text-align: center;
+    padding: 5%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    a{
+        margin:auto;
     }
+    
+
+    img{
+    width: 60px;
+    }
+}
+
+#mainfooter{
+    background-color: beige;
+  height: 60px;
+  margin-top: -20px;
+  text-align: center;
+  
+
+}
+
+table{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-collapse: collapse;
+    width: 80%;
+    
+
+    td{
+        width: 30px;
+    }
+
+    th{
+        width: 10px;
+    }
+    
+    thead {
+background-color: green;
+padding: 2%;
+width: 3%;
+    }
+}
+
+tbody tr:nth-child(even){
+    background-color: #AFAFAF;
+}
+
+tbody tr:nth-child(odd){
+    background-color: yellow;
+}
+
+/*alle td - einzelne einträge der tabelle UND th - einzelen einträge in spaltenüberschrift*/
+td, th{ 
+    padding: 2%;
+}
+
+tbody:hover{
+    font-weight: bold;
+}
+
