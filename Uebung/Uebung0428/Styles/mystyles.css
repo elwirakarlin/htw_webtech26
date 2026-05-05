@@ -112,7 +112,8 @@ font-weight: bold;
 table{
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     border-collapse: collapse;
-    width: 80%;
+    width: 60%;
+    
     
 
     td{
@@ -129,11 +130,11 @@ padding: 2%;
 width: 3%;
     }
 }
-
+/*jede zweite zeiel mit geraden nummer*/
 tbody tr:nth-child(even){
     background-color: #AFAFAF;
 }
-
+/*jede zweite zeile mit ungraden nummer*/
 tbody tr:nth-child(odd){
     background-color: yellow;
 }
@@ -143,7 +144,8 @@ td, th{
     padding: 2%;
 }
 
-tbody:hover{
+/*jede Zeile bekommt einen hover effekt*/
+tbody tr:hover{
     font-weight: bold;
 }
 
