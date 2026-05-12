@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <!---Kommentar-->
+    <main>
+        <h4>Eigenschaften</h4>
+        <ul>
+            <li>Skriptsprache (aus Performanzgründen aber compiliert - z.B. V8 in Chrome, SpiderMonkey in Firefox)</li>
+            <li>dynamische Typisierung</li>
+            <li>keine unterschiedlichen Referenztypen</li>
+            <li>Vererbung durch <code>prototype</code></li>
+            <li>Objekteigenschaften und -funktionen können einfach dem Objekt hinzugefügt werden</li>
+        </ul>
+        <h4>Nützliche Links</h4>
+        <ul>
+            <li><a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">ECMA-262</a></li>
+            <li><a href="https://dom.spec.whatwg.org/">Document Object Model (DOM)</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">JavaScript Guide</a></li>
+            <li><a href="https://www.w3schools.com/js/default.asp">JavaScript Tutorial</a></li>
+            <li><a href="https://learnjavascript.online/">Learn JavaScript</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">JavaScript Reference</a></li>
+        </ul>
+        <h4>Ergebnisliste</h4>
+        <ul id="ulresult">
+            <li id="liresult1"></li> <!--List-Item ohne Content-->
+        </ul>
+        <input type="text" id="input" oninput="inputFunc()" placeholder="Name"/>
+        <!----Input = Eingabe, typ ist immer dabei = standart ist text, id kann man, muss man nicht, Attribut - onNamedesEreignisses-->
+        <button type="button" onclick ="helloFiW()">Klick Mich!</button>
+    </main>
+    <script>
+        //JavaScript- Kommentar
+        function inputFunc(){
+            //erstmal das benötigte Element aus dem DOM holen mit Hilfe von getElementbyId
+            //let inputElement = document.getElementById('input')
+            let inputElement = document.querySelector('#input') //nur das erste kommt raus (mit ALL alle Elemente)
+            console.log(inputElement.value)
+            let liElement = document.querySelector('#liresult1')
+            liElement.textContent = inputElement.value 
+            liElement.style.color = 'red'
+
+        }
+
+        function helloFiW() {
+            console.log("Hello FiW!")
+        }
+
+
+
+
+
+        //über externen Link zu JavaSrcipt anbinden <script scr="">
+
+        //Variablen Deklarieren /keien Typisierung der Variablen, anhand des Wertes wird der Typ ermittelt 
+        let x= 5; 
+        x = "FIW"; 
+
+        //Bevorzugtte Möglichkeit
+        const y = 6; //keine ernute deklasrierung möglich
+        //y ="FIW"; //Fehler 
+
+        //Konvention - Konstante zu deklalieren
+
+        //Wird nicht mehr verwendet
+        var a = 7; 
+        a=6; //globale Variable
+
+        //=====Funktionen definieren
+        function test1(c,b) //Schlüsselwort, Name der Funktione, Parameter
+        {
+            return c+b;
+        }
+
+        test1(3,4); //Semikolon muss nicht sein 
+
+        //Ausgabe in der Console
+        console.log("test1: " + test1(3,4)); // String mit ""
+        console.log('test1 :' + test1(8,9)); //String mit ''
+        console.log('test1 :' , test1(7,9));//mit Komma, wird es weiterhin wie mit  ausgegeben 
+
+        console.log("x= :" + x);
+        console.log('x= :'+ x);
+        console.log(`x = ${x}`);
+
+        const test2=test1; //Man kann Funktionen, die Variablen übergeben
+        //erstmal als "const", aber wenn es sich ändern soll, dass "let"
+
+        console.log("test2: " + test2(3,4));
+
+        //Arrow Notation
+        let test3 = (a,b) => a+b; 
+        console.log("test3: " + test3(3,4));
+
+
+    </script>
+</body>
+</html>
