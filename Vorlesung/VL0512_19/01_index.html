@@ -29,25 +29,38 @@
         </ul>
         <h4>Ergebnisliste</h4>
         <ul id="ulresult">
-            <li id="liresult1"></li> <!--List-Item ohne Content-->
+            <li id="liresult1"> ==$0
+
+            </li> <!--List-Item ohne Content-->
         </ul>
-        <input type="text" id="input" oninput="inputFunc()" placeholder="Name"/>
+        <input type="text" id="input" oninput="inputFunc()" onfocus="changeColor" placeholder="Name"/>
         <!----Input = Eingabe, typ ist immer dabei = standart ist text, id kann man, muss man nicht, Attribut - onNamedesEreignisses-->
         <button type="button" onclick ="helloFiW()">Klick Mich!</button>
     </main>
     <script>
         //JavaScript- Kommentar
-        function inputFunc(){
-            //erstmal das benötigte Element aus dem DOM holen mit Hilfe von getElementbyId
+        function inputFunc()
+    
+        {
+            //man kann das benötigte Element aus dem DOM holen mit Hilfe von getElementbyId
             //let inputElement = document.getElementById('input')
             let inputElement = document.querySelector('#input') //nur das erste kommt raus (mit ALL alle Elemente)
             console.log(inputElement.value)
             let liElement = document.querySelector('#liresult1')
-            liElement.textContent = inputElement.value 
-            liElement.style.color = 'red'
+            liElem.innerHTML = `Eingabe <ul><li style ="color: red">${inputElement.value}</li></ul>`
+
+            
+            //liElement.textContent = inputElement.value
+            //liElement.style.color = 'red'
 
         }
 
+        function changeColor()
+        {
+            let inputElement = 
+            inputElement.style.backroundColor = "yellow"
+        }
+        
         function helloFiW() {
             console.log("Hello FiW!")
         }

@@ -24,7 +24,7 @@
 
     </form> 
     <script>
-        let nr = 1;
+        let nr = 1; //global, weil außerhalb der Funktion
 
         function fixeInput() {
             /*
@@ -53,7 +53,7 @@
             newInput.focus();
             */
 
-            nr++;
+            nr++; //Erhähen die Variable 
             let curInputId = "input" + nr;
             let kommentar = "Kommentar " + nr;
             let form = document.getElementById('form');
