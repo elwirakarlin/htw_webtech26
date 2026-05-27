@@ -10,7 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--Aus dem Internet die URL oben / aber man kann es auch über Workspace einbinden link rel="stylesheet" href=../../bootsrap_css/bootstrap.min.css-->
     <title>Uebung4</title>
-    
+
   </head>
 
 </head>
@@ -25,6 +25,8 @@
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="firstNameId" placeholder="Vorname">
         <label for="firstNameId">Vorname</label>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Vorname erforderlich</div>
       </div>
     </div>
 
@@ -32,21 +34,27 @@
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="lastNameId" placeholder="Nachname">
         <label for="lastNameId">Nachname</label>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Nachname erforderlich</div>
       </div>
     </div>
 
 
     <div class="col-md-6 col-md-4 col-xl-2">
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control" id="floatingInput" placeholder="Email">
         <label for="floatingInput">Email address</label>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Email erforderlich</div>
       </div>
     </div>
 
     <div class="col-md-6 col-md-4 col-xl-2">
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+        <input type="text" class="form-control" id="ipAdressId" placeholder="IP Adresse">
+        <label for="ipAdressId">IP Adresse</label>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">IP Adresse erforderlich</div>
       </div>
     </div>
 
@@ -55,11 +63,16 @@
   <div class="row">
     <div class="d-grid gap-4 d-md-block">
       <button type="button" class="btn btn-secondary">Abrechen</button>
-      <button type="button" class="btn btn-success" onclick="register()">Speichern</button>
+      <button type="button" class="btn btn-success" onclick="register()">Registrieren</button>
     </div>
   </div>
 
+  <h2 class="mt-5">Eingegebene Werte</h2>
 
+  <ul class="list-group" id="werteListe">
+
+
+  </ul>
 
 
 
@@ -72,14 +85,58 @@
 
 <script>
 
-  function register(){
+  function register() {
 
-    console.log ('Speichern-Button geklickt')
+    console.log('Registrieren-Button geklickt')
     const inputElementFirstName = document.querySelector('#firstNameId'); //wir holen html Element mit allen Eigenschaften (also die ganze Zeile) (objekt) als Input 
-    console.log('inputElementFirstName ', inputElementFirstName)
-    const firstName = inputElementFirstName.value //Value holen   
+    console.log('inputElementFirstName ', inputElementFirstName) //Javascript objekt
+    const firstName = inputElementFirstName.value //Value holen, Zugriff als Eigenschaft "Eingegebener Text"
     console.log('firstname: ', firstName)
 
-  }
-</script>
+    const allInputs = document.querySelectorAll('input'); // alle 4 Input-Elemnete als Array (NodeList)
+    console.log('allInputs: ', allInputs);
 
+
+    //const labels = ["Vorname", "Nachname", "E-Mail", "IP-Adresse"];
+    const outputList = document.querySelector('#werteListe'); // ul #werteliste als JS-Objekt (JavaSript)
+    outputList.innerHTML = ""; //ul leeren, damit es nicht immer hinzu kommt
+
+    let inputOk = true;
+
+    for (index = 0; index < allInputs.length; index++) {
+      console.log((index + 1) + ".value : " + allInputs[index].value)
+
+      if (allInputs[index].value == "") {
+
+        //keine Einagbe in allInputs[index]
+        //Klasse is invalid bekommen
+        allInputs[index].classList.add('is-invalid');
+        allInputs[index].classList.remove('is-valid');
+        inputOk = false;
+      }
+      else {
+        // Eingabe in allInputs[index]
+        allInputs[index].classList.add('is-valid');
+        allInputs[index].classList.remove('is-invalid');
+
+        //outputList.innerHTML += `<li class= "list-group-item"> ${allInputs[index].value} </li>`; //outputList wird mit HTML befüllt 
+        // Label + Wert zusammen ausgeben:
+        outputList.innerHTML += `<li class="list-group-item"> ${allInputs[index].placeholder} : ${allInputs[index].value}</li>`;
+      }
+    }
+
+      const headLine = document.querySelector('h2')
+      if (inputOk) {
+        headLine.textContent = 'Eingegebene Werte';
+        headLine.style.color = "green";
+        outputList.style.display = "block";
+      }
+      else {
+        headLine.textContent = "Bitte alle Werte eingeben";
+        headLine.style.color = "red";
+        outputList.style.display = "none";
+
+      }
+
+    }
+</script>
