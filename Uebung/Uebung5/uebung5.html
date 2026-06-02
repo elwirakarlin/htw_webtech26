@@ -57,22 +57,23 @@
             console.log('staedte:', staedtearr)
 
             if(staedtearr.length > 0)
-            {
+        {
                 let tbody = document.getElementById('tbody');
                 tbody.innerHTML = '';
                 let nr = 1;
             
-                for(let stadtObj of staedtearr)
+                for(let stadtObj of staedtearr) //for shcleife, 11 mal durchlaufen, und Bedienung wird geprüft 
+            {
+                if(stadtObj.stadt.includes(input) || stadtObj.jahr.toString().includes(input))
                 {
-                
                 tbody.innerHTML += 
                 `<tr>  
                         <td>${nr}</td>
                         <td>${stadtObj.jahr}</td>
                         <td>${stadtObj.stadt}</td>
                         <td> <a href="${stadtObj.link}" class="btn btn-success btn-sm">  Info</a> </td>
-                        <td> <a href="${stadtObj.link}" class="btn btn-success btn-sm">  Info</a> </td>
-                        <td><img src="${stadtObj.bild} alt="${stadtObj.stadt}"></td>
+                        <td><img src="${stadtObj.bild}" alt="${stadtObj.stadt}"></td>
+                        
 
 
                  </tr>`;
@@ -88,6 +89,7 @@
                 }
             }
         }
+    }   
 //wird automatisch aufgerufen
         async function init() {
            /*         
