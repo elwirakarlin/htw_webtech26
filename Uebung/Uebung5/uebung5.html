@@ -64,7 +64,7 @@
             
                 for(let stadtObj of staedtearr) //for shcleife, 11 mal durchlaufen, und Bedienung wird geprüft 
             {
-                if(stadtObj.stadt.includes(input) || stadtObj.jahr.toString().includes(input))
+                if(stadtObj.stadt.includes(input.toLowerCase) || stadtObj.jahr.toString().includes(input))
                 {
                 tbody.innerHTML += 
                 `<tr>  
