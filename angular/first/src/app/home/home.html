@@ -1,4 +1,27 @@
 <div id="home">
-    <app-left></app-left>
-    <app-right></app-right>
+    <!--Angular Templates-->
+    <!-- Das ist Angular-Template-Syntax (im HTML) -->
+
+    
+    <!----Interpolation: greifen auf Werte einer Variable, um Weret auszulesen-->
+    <!-----1. Möglichkeit-->
+    <h1>{{title}}</h1>
+    <p> 1+2 = {{1+2}}</p>
+
+    <!-----2. Möglichkeit, Button bauen, keine Interpolation, sondern Attribut binden an den Wertund in ts Dokument als Eigenschaft der Klasse -->
+    <!--[] binden an die Variable-->
+    <!--img [src]="bildQuelle1" alt="HTW"/>
+
+    <!-----3. Möglichkeit, EventBinding, Ereignis an TypeSript coe binden---->
+    <!---z.B. Kilciereignis binden, mit click == Schnittstelle zu Angular, Ereignis click/input/change -->
+    <button [disabled] = "isDisabled" (click)="changeImg()">zeige {{buttonname}}</button> 
+
+    <button (click)="smaller()">-</button>
+    <img [src]="bildQuelle" alt="HTW"
+    [style.width.px]="groesse"/>
+    <button (click)="bigger()">+</button>
+
+
+
+
 </div>

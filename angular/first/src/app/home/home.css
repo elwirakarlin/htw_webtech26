@@ -1,6 +1,12 @@
 #home{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: aquamarine
+    
+    background-color: aquamarine;
+
+    padding: 2%;
+
+   img{
+    max-width: 400px;
+    height: auto;
+}
     
 }
