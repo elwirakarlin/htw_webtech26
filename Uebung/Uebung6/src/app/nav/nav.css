@@ -1,6 +1,28 @@
 #nav {
     background-color: azure;
-    text-align: center;
+    text-align: left;
     color: blueviolet;
-    padding: 1%;
+    padding: 4%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;          /* Links nebeneinander */
+    justify-content: center; /* zentriert */
+    gap: 2rem;              /* Abstand zwischen den Links */
+}
+
+a {
+    text-decoration: none;  /* kein Unterstrich */
+    color: blueviolet;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+a:hover {
+    background-color: blueviolet;
+    color: white;
+    border-radius: 8px;     /* abgerundete Ecken beim Hover */
 }

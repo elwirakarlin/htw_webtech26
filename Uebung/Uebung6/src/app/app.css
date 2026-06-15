@@ -1,4 +1,7 @@
 #app{
+    min-height: 80vh; 
     display: grid;
     grid-template-rows: auto auto 1fr auto;
+    /* 1fr passt sich dynmaich an Inhalt 
+    auto = dynmaisch an den Inhalt*/
 }

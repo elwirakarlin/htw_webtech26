@@ -1,1 +1,40 @@
-<p>form works!</p>
+<div id="form">
+    <h1> Neue Teilnehmerin </h1>
+<div class="mb-3 row">
+  <label for="inputVorname" class="col-sm-2 col-form-label">Vorname</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [formControl]= "vornameControl" id="InputVorname">
+  </div>
+</div>
+
+<div class="mb-3 row">
+  <label for="InputNachname" class="col-sm-2 col-form-label">Nachname</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [formControl]= "nachnameControl" id="InputNachname">
+  </div>
+</div>
+
+    <div class="mb-3 row">
+  <label for="InputEmail" class="col-sm-2 col-form-label">E-Mail</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [formControl]= "emailControl" id="InputEmail">
+  </div>
+</div>
+
+<div class="mb-3 row">
+  <label for="InputIPAdress" class="col-sm-2 col-form-label">IPAdress</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [formControl]="ipadresseControl" id="InputIPAdress">
+  </div>
+</div>
+
+
+<!--alles was mit Class drin steht = Biitsrap-->
+<!--[formControl]= "emailControl" ATTRIBUT BINDING VERBINDUNG mit typescript klasse-->
+
+<button class="btn btn-success" [disabled]="!inValid()" (click)="create()"> Create</button>
+<!--(clic)="create()" EVENT BINDING VERBINDUNG mit typescript klasse-->
+
+
+
+</div>
